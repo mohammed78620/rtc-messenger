@@ -1,0 +1,27 @@
+{
+  "name": "rtc-messenger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammed78620/rtc-messenger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammed78620/rtc-messenger/issues"
+  },
+  "homepage": "https://github.com/mohammed78620/rtc-messenger#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
