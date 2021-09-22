@@ -12,8 +12,8 @@ socket.on('chat-message', data => {
     appendMessage(`${data.name}: ${data.message}`)
 })
 socket.on('file-message', data => {
-    console.log(data.file)
-    appendMessage('file recieved')
+    console.log(data.name)
+    // appendMessage(`${data.name}:`)
     // readURL(data.file)
     appendFile(data)
     
@@ -42,6 +42,7 @@ function readURL(input) {
             img = document.createElement('img')
             img.src = e.target.result
             img.style.width="50%";
+            appendMessage('You:')
             messageContainer.append(img)
 
             socket.emit('send-file-message', msg);
@@ -57,9 +58,13 @@ function appendMessage(message) {
     messageElement.innerText = message
     messageContainer.append(messageElement)
 }
+
 function appendFile(message) {
     img = document.createElement('img')
+    messageElement = document.createElement('div')
+    messageElement.innerText = `${message.name}:`
     img.src = message.file
+    img.style.width = "50%"
+    messageContainer.append(messageElement)
     messageContainer.append(img)
-
 }
